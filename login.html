@@ -22,17 +22,17 @@
   </style>
 
 </head>
-<body class="bg-white flex w-full flex-col font-kadwa">
-
+<body class="bg-white flex w-full flex-col font-kadwa ">
+ 
   <nav class="shadow-md flex w-full justify-center">
     <img src="assets/images/logo navbar.png" alt="nav logo" class="object-contain h-20">
   </nav>
 
   <main class="flex  w-full ">
     <!-- MAIN CONTAINER -->
-    <div class="flex h-full w-full pt-4 relative justify-center items-start m-8 pb-80">
+    <div class="flex h-full w-full pt-4 relative justify-center items-start m-8 pb-80 relative">
          <!-- BACK LINK -->
-        <a href="javascript:void(0)" onclick="window.history.back()" class="text-[#1F324E] absolute top-4 left-0">
+        <a href="javascript:void(0)" onclick="window.history.back()" class="text-[#1F324E] absolute top-4 left-0 hover:opacity-70">
             <i class="fa-solid fa-chevron-left text-4xl"></i>
         </a>
         <div class="flex w-full xl:w-1/3 flex-col items-center xl:px-8 ">
@@ -44,12 +44,20 @@
               Email
             </label>
             <input class="text-xl shadow appearance-none border focus:bg-white fo bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 focus:shadow-outline" id="email" type="text" name="email" placeholder="Masukkan Email Anda" required>
+             <!-- ERROR MSG -->
+             <span class="mt-4 px-2 hidden text-sm text-red-500 ">
+              Password tidak sama 
+            </span>
           </div>
           <div class="mb-2">
             <label class="block text-black text-2xl font-bold mb-2" for="password">
               Password
             </label>
             <input class="text-xl shadow appearance-none border focus:bg-white bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 focus:shadow-outline" id="password" type="password" name="password" placeholder="Masukkan Password Anda" required>
+             <!-- ERROR MSG -->
+             <span class="mt-4 px-2 hidden text-sm text-red-500 ">
+              Password tidak sama 
+            </span>
           </div>
           <div class="flex items-center justify-start">
             
@@ -58,7 +66,7 @@
             </a>
 
           </div>
-          <div class="flex items-center justify-end pb-10 border-b border-decoration">
+          <div class="flex items-center justify-end pb-10 border-b border-decoration pt-8">
             <button class="bg-accent hover:opacity-90 text-white  font-bold py-4 px-10 rounded-lg focus:outline-none focus:shadow-outline" type="submit">
                 Masuk
               </button>
@@ -66,7 +74,7 @@
           <div class="flex items-center justify-center pt-8 flex-col gap-2">
             <h2 class="inline-block align-baseline font-normal text-xl ">
                 Belum Punya Akun? 
-            <a class="text-info hover:text-blue-800 underline decoration-blue-400" href="#">
+            <a class="text-info hover:text-blue-800 underline decoration-blue-400" href="register.html">
                 Daftar
             </a>
             <h2 class="inline-block align-baseline font-normal text-xl ">
@@ -88,25 +96,25 @@
         <div class="flex flex-col">
           <div class="flex flex-col mb-8">
             <h2 href="" class="mb-4 text-accent ">Tentang</h2>
-            <a href="" class="mb-2">Tentang Kami</a>
-            <a href="" class="mb-2">Toko Kami</a>
+            <a href="" class="mb-2 cursor-pointer hover:opacity-70">Tentang Kami</a>
+            <a href="" class="mb-2 cursor-pointer hover:opacity-70">Toko Kami</a>
 
           </div>
           
           <div class="flex flex-col mb-8">
             <h2 href="" class="mb-4 text-accent ">Belanja</h2>
-            <a href="" class="mb-2">Berbelanja</a>
-            <a href="" class="mb-2">Pembayaran</a>
+            <a href="" class="mb-2 cursor-pointer hover:opacity-70">Berbelanja</a>
+            <a href="" class="mb-2 cursor-pointer hover:opacity-70">Pembayaran</a>
 
           </div>
 
         </div>
         <div class="flex flex-col mb-8 md:ml-32 ml-12">
           <h2 class="mb-4 text-accent ">Lainnya</h2>
-          <a href="" class="mb-2">Syarat & Ketentuan</a>
-          <a href="" class="mb-2">Kebijakan & Privasi</a>
-          <a href="" class="mb-2">Bantuan</a>
-          <a href="" class="mb-2">Hubungi Kami</a>
+          <a href="" class="mb-2 cursor-pointer hover:opacity-70">Syarat & Ketentuan</a>
+          <a href="" class="mb-2 cursor-pointer hover:opacity-70">Kebijakan & Privasi</a>
+          <a href="" class="mb-2 cursor-pointer hover:opacity-70">Bantuan</a>
+          <a href="" class="mb-2 cursor-pointer hover:opacity-70">Hubungi Kami</a>
         </div>
         
       </div>
@@ -117,9 +125,9 @@
     <div class="flex w-full items-center gap-2">
       <hr class="w-full bg-white">
       <div class="flex gap-2 md:gap-8 ">
-        <a href="#"><img src="assets/icons/instagram.svg" alt="instagram" class="aspect-square h-20 md:h-10"></a>
-        <a href="#"><img src="assets/icons/facebook.svg" alt="facebook" class="aspect-square h-20 md:h-10"></a>
-        <a href="#"><img src="assets/icons/gmail.svg" alt="gmail" class="aspect-square h-20 md:h-10"></a>
+        <a href="#"><img src="assets/icons/instagram.svg" alt="instagram" class="aspect-square h-20 md:h-10 cursor-pointer"></a>
+        <a href="#"><img src="assets/icons/facebook.svg" alt="facebook" class="aspect-square h-20 md:h-10 cursor-pointer"></a>
+        <a href="#"><img src="assets/icons/gmail.svg" alt="gmail" class="aspect-square h-20 md:h-10 cursor-pointer"></a>
       </div>
     </div>
     <!-- CP -->
