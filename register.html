@@ -90,7 +90,7 @@
                     Masukan nomor telepon yang valid 
                   </span>
                 </div>
-          <div class="mb-2">
+          <div class="mb-8">
             <label class="block text-black text-2xl font-bold mb-2" for="password">
               Ketik Ulang Password
             </label>
@@ -101,9 +101,31 @@
               </span>
             
         </div>
+        <div class="mb-8">
+          <label class="block text-black text-2xl font-bold mb-2" for="password">
+            Pilih minat bacaan kamu yuk!
+          </label>
+          <div onclick="showModal('minat')" class="text-xl shadow appearance-none border bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-400 leading-tight flex items-center justify-start">kamu bisa memilih maks. 5 kategori</div>
+            <input type="hidden" name="minat" id="inputminat" required/>
+           <!-- ERROR MSG -->
+           <span class="mt-4 px-2 hidden text-sm text-red-500 ">
+              Password tidak sama 
+            </span>
+          
+      </div>
+      <div class="mb-2">
+        <label class="block text-black text-xl font-bold mb-2" for="referal">
+          Tahu Deepublish dari teman?
+        </label>
+        <input class="text-xl shadow appearance-none border focus:bg-white fo bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:outline-4 focus:invalid:bg-white  focus:invalid:ring-red-500 focus:shadow-outline peer peer-[&:not(:placeholder-shown):not(:focus):invalid]:border-red-500" id="referal" type="text" name="referal"  placeholder="Masukkan kode referal teman mu disini..." required>
+        <!-- ERROR MSG -->
+        <span class="mt-4 px-2 hidden text-sm text-red-500 ">
+            Masukan nomor telepon yang valid 
+          </span>
+        </div>
          
           <div class="flex items-center justify-end pb-10 border-b border-decoration pt-8">
-            <button type="button" class="bg-accent group-invalid:pointer-events-none hover:opacity-90 text-white  font-bold py-4 px-10 rounded-lg focus:outline-none focus:shadow-outline" onclick="showSuccessOverlay()">
+            <button type="button" class="bg-accent hover:opacity-90 text-white  font-bold py-4 px-10 rounded-lg focus:outline-none focus:shadow-outline" onclick="showSuccessOverlay()">
                 Daftar
              </button>
           </div>
@@ -121,9 +143,26 @@
         </form>
         </div>
     </div>
+    
 
   </main>
-
+    <!-- MINAT MODAL -->
+    <div id="minat" class="flex justify-center items-center w-screen h-screen backdrop-blur-sm fixed bg-gray-500/30 hidden">
+      <div class="flex w-3/5 flex-col bg-white rounded-2xl ">
+        <div class="grid grid-cols-4 gap-4 w-full p-4">
+          <!-- CARD -->
+          <div idMinat="1" class="flex items-center justify-center w-full h-20 hover:border-4 hover:border-accent hover:text-accent text-xl shadow-md rounded-lg hover:scale-110 minat">Dummy</div>
+          <div idMinat="2" class="flex items-center justify-center w-full h-20 hover:border-4 hover:border-accent hover:text-accent text-xl shadow-md rounded-lg hover:scale-110 minat">Dummy</div>
+          <div idMinat="3" class="flex items-center justify-center w-full h-20 hover:border-4 hover:border-accent hover:text-accent text-xl shadow-md rounded-lg hover:scale-110 minat">Dummy</div>
+          <div idMinat="4" class="flex items-center justify-center w-full h-20 hover:border-4 hover:border-accent hover:text-accent text-xl shadow-md rounded-lg hover:scale-110 minat">Dummy</div>
+          
+          
+        </div>  
+        <div class="flex w-full h-20 relative mt-4">
+        <button onclick="hideModal('minat')" class="bg-accent hover:opacity-90 text-white  font-bold py-4 px-10 rounded-lg focus:outline-none focus:shadow-outline w-fit h-fit absolute mb-3 mr-3 bottom-0 right-0">Oke</button>
+        </div>
+      </div>
+    </div>
   <footer class="flex w-full bg-primary px-24 flex-col">  
     <!-- CONTAINER NAV -->
     <div class="flex w-full justify-center md:justify-between flex-wrap py-12">
@@ -171,6 +210,37 @@
   </footer>
 
   <script>
+
+    // HANDLE MINAT CARD
+    document.querySelectorAll('.minat').forEach(element => {
+            element.addEventListener('click', () => {
+                if (element.classList.contains('selected')) {
+                    // If the element is already selected, deselect it
+                    element.classList.remove('selected');
+                    element.classList.add('hover:border-4', 'hover:border-accent', 'hover:text-accent');
+                } else {
+                    // If the element is not selected, select it and disable hover
+                    element.classList.add('selected');
+                    element.classList.remove('hover:border-4', 'hover:border-accent', 'hover:text-accent');
+                }
+
+                // Update the hidden input value with all selected ids
+                const selectedIds = Array.from(document.querySelectorAll('.minat.selected')).map(el => el.getAttribute('idMinat'));
+                document.getElementById('inputminat').value = selectedIds.join(',');
+                console.log(document.getElementById('inputminat').value);
+            });
+        });
+
+    function showModal(param){
+      document.getElementById(param).classList.add('flex');
+      document.getElementById(param).classList.remove('hidden');
+
+    }
+    function hideModal(param){
+      document.getElementById(param).classList.add('hidden');
+      document.getElementById(param).classList.remove('flex');
+
+    }
     function showSuccessOverlay(){
         let overlay = document.getElementById('success');
         overlay.style.display = 'flex';
