@@ -102,18 +102,28 @@
             
         </div>
         <div class="mb-8">
+
           <label class="block text-black text-2xl font-bold mb-2" for="password">
             Pilih minat bacaan kamu yuk!
           </label>
-          <div onclick="showModal('minat')" class="text-xl shadow appearance-none border bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-400 leading-tight flex items-center justify-start">kamu bisa memilih maks. 5 kategori</div>
-            <input type="hidden" name="minat" id="inputminat" required/>
-           <!-- ERROR MSG -->
+          <div onclick="toggleModal('minat')" class="text-xl shadow appearance-none border bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-400 leading-tight flex items-center justify-start">kamu bisa memilih maks. 5 kategori</div>
+        <input type="hidden" name="minat" id="inputminat" required/>
+         
+           <span class="mt-2 px-2 hidden flex-col justify-start text-2xl font-bold text-accent" id="containerList">
+            minat bacaan yang kamu pilih adalah: 
+            <ul class=" list-disc text-black pl-20 font-semibold text-xl pt-2" id="listselectedminat">
+              
+            </ul>
+          </span>
+            
+          <!-- ERROR MSG -->
            <span class="mt-4 px-2 hidden text-sm text-red-500 ">
               Password tidak sama 
             </span>
           
       </div>
       <div class="mb-2">
+
         <label class="block text-black text-xl font-bold mb-2" for="referal">
           Tahu Deepublish dari teman?
         </label>
@@ -147,7 +157,7 @@
 
   </main>
     <!-- MINAT MODAL -->
-    <div id="minat" class="flex justify-center items-center w-screen h-screen backdrop-blur-sm fixed bg-gray-500/30 hidden">
+    <div id="minat" class="hidden flex justify-center items-center w-screen h-screen backdrop-blur-sm fixed bg-gray-500/30 hidden">
       <div class="flex w-3/5 flex-col bg-white rounded-2xl ">
         <div class="grid grid-cols-4 gap-4 w-full p-4 ">
           <!-- CARD -->
@@ -164,7 +174,7 @@
           
         </div>  
         <div class="flex w-full h-20 relative mt-4">
-        <button onclick="hideModal('minat')" class="bg-accent hover:opacity-90 text-white  font-bold py-4 px-10 rounded-lg focus:outline-none focus:shadow-outline w-fit h-fit absolute mb-3 mr-3 bottom-0 right-0">Oke</button>
+        <button onclick="toggleModal('minat')" class="bg-accent hover:opacity-90 text-white  font-bold py-4 px-10 rounded-lg focus:outline-none focus:shadow-outline w-fit h-fit absolute mb-3 mr-3 bottom-0 right-0">Oke</button>
         </div>
       </div>
     </div>

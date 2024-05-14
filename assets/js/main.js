@@ -1,5 +1,14 @@
+let minat = {}
+let inputminat = document.getElementById('inputminat');
+let listselectedminat = document.getElementById('listselectedminat');
+let containerList = document.getElementById('containerList');
 // HANDLE MINAT CARD
+
 document.querySelectorAll('.minat').forEach(element => {
+    const idMinat = element.getAttribute('idMinat');
+    const text = element.innerHTML;
+    minat[idMinat]=text;
+
     element.addEventListener('click', () => {
         const selectedElements = document.querySelectorAll('.minat.selected');
         if (element.classList.contains('selected')) {
@@ -17,21 +26,28 @@ document.querySelectorAll('.minat').forEach(element => {
         }
 
         // Update the hidden input value with all selected ids
-        const selectedIds = Array.from(document.querySelectorAll('.minat.selected')).map(el => el.getAttribute('idMinat'));
-        document.getElementById('inputminat').value = selectedIds.join(',');
+        selected = Array.from(document.querySelectorAll('.minat.selected')).map(el => el.getAttribute('idMinat'));
+        if (selected.length) {
+            containerList.classList.add('flex');
+            containerList.classList.remove('hidden');
+        } else {
+            containerList.classList.add('hidden');
+            containerList.classList.remove('flex');
+        }
+        inputminat.value = selected  .join(',');
+        el = "";
+        selected.forEach(selectedminat=>{
+            el+=`<li><p class="text-gray-400 pl-4">`+minat[selectedminat]+`</p></li>`
+        })
+        listselectedminat.innerHTML=el;
     });
 });
 
-function showModal(param){
-document.getElementById(param).classList.add('flex');
-document.getElementById(param).classList.remove('hidden');
+function toggleModal(param){
+document.getElementById(param).classList.toggle('hidden');
 
 }
-function hideModal(param){
-document.getElementById(param).classList.add('hidden');
-document.getElementById(param).classList.remove('flex');
 
-}
 function showSuccessOverlay(){
 let overlay = document.getElementById('success');
 overlay.style.display = 'flex';
