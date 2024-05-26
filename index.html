@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Penerbit Buku Deepublish, Penerbit Buku Pendidikan ">
+  <meta name="keywords" content="Buku , Bookstore , Penerbit">
+  <meta name="author" content="dafahan | Gerha Digital">
+  <!-- TAILWIND -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CUSTOM STYLING -->
+  <style>
+    .font-kadwa {
+        font-family: "Kadwa", serif;
+        }
+  </style>
+
+</head>
+<body class="bg-white flex w-full flex-col font-kadwa ">
+ 
+ 
+  <nav class="shadow-md flex w-full justify-center">
+    <img src="assets/images/logo navbar.png" alt="nav logo" class="object-contain h-20">
+  </nav>
+
+
+
+  <main class="flex  w-full border-black">
+    <!-- MAIN CONTAINER -->
+    <div class="flex w-full flex-col">
+        <!-- BANNER -->
+        <div class="flex  w-full bg-center bg-no-repeat bg-cover items-center justify-center flex-col py-16 gap-8 px-12 md:px-24" style="background-image: url('assets/images/bookstore.svg');">
+          <img src="/assets/images/Deepublish.svg" alt="" class="object-contain h-36">
+          <h1 class="text-center text-white text-2xl font-bold tracking-wide">Toko buku online terlengkap untuk referensi anak kuliah di Indonesia.</h1>
+          <div class="flex bg-white rounded-lg w-full md:w-2/3 h-16 relative">
+            <i class="fa-solid fa-magnifying-glass absolute left-0 m-4 text-2xl"></i>
+            <input type="text" name="filterKeyword" id="filterKeyword" placeholder="Cari Produk, Judul Buku, dan Penulis.." class="flex w-4/5 rounded-s-lg border-r-4 border-accent text-center text-2xl">
+            <select class="w-1/5 text-center flex text-xl items-center justify-center bg-white rounded-e-lg border-r-8 border-transparent" name="filterCategory" id="filterCategory"> 
+              <option value="">Kategori</option>
+            </select>
+          </div>
+        </div>
+        <!-- SECTION 1 -->
+        <div class="flex w-full bg-white">
+            <!-- SLIDER -->
+
+            <div class="flex w-full h-[500px] relative">
+              <div class="flex w-full sm:mx-24 my-12 border-2 bg-cover bg-center transition-all duration-500" id="card" style="background-image: url('./assets/images/bookstore.svg');"></div>
+              <i class="fa-solid fa-chevron-right absolute top-[35%] right-6 text-accent bg-white rounded-full shadow-md p-4 text-4xl cursor-pointer" id="nextSlide"></i>
+              <i class="fa-solid fa-chevron-left absolute top-[35%] left-6 text-accent bg-white rounded-full shadow-md p-4 text-4xl cursor-pointer" id="prevSlide"></i>
+              <div class="flex gap-2 absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                  <i class="fa-solid fa-circle text-sm text-accent" data-index="0"></i>
+                  <i class="fa-solid fa-circle text-sm" data-index="1"></i>
+                  <i class="fa-solid fa-circle text-sm" data-index="2"></i>
+              </div>
+            </div>
+
+            <script>
+              let data = ["./assets/images/bookstore.svg", "./assets/images/register banner.svg", "./assets/images/bookstore.svg"];
+              let currentIndex = 0;
+
+              const card = document.getElementById('card');
+              const nextSlide = document.getElementById('nextSlide');
+              const prevSlide = document.getElementById('prevSlide');
+              const indicators = document.querySelectorAll('.fa-circle');
+
+              function updateSlide(index) {
+                  card.style.backgroundImage = `url('${data[index]}')`;
+                  indicators.forEach((indicator, i) => {
+                      if (i === index) {
+                          indicator.classList.add('text-accent');
+                      } else {
+                          indicator.classList.remove('text-accent');
+                      }
+                  });
+              }
+
+              nextSlide.addEventListener('click', () => {
+                  currentIndex = (currentIndex + 1) % data.length;
+                  updateSlide(currentIndex);
+              });
+
+              prevSlide.addEventListener('click', () => {
+                  currentIndex = (currentIndex - 1 + data.length) % data.length;
+                  updateSlide(currentIndex);
+              });
+
+              indicators.forEach(indicator => {
+                  indicator.addEventListener('click', () => {
+                      const index = parseInt(indicator.getAttribute('data-index'));
+                      currentIndex = index;
+                      updateSlide(currentIndex);
+                  });
+              });
+
+              // Initialize the slider with the first image
+              updateSlide(currentIndex);
+            </script>
+
+        </div>
+
+
+    </div>
+
+  </main>
+
+
+
+
+  <footer class="flex w-full bg-primary px-24 flex-col">  
+    <!-- CONTAINER NAV -->
+    <div class="flex w-full justify-center md:justify-between flex-wrap py-12">
+      
+      <div class="flex text-xl font-bold text-white justify-between">
+        <div class="flex flex-col">
+          <div class="flex flex-col mb-8">
+            <h2 href="" class="mb-4 text-accent ">Tentang</h2>
+            <a href="" class="mb-2 cursor-pointer hover:opacity-70">Tentang Kami</a>
+            <a href="" class="mb-2 cursor-pointer hover:opacity-70">Toko Kami</a>
+
+          </div>
+          
+          <div class="flex flex-col mb-8">
+            <h2 href="" class="mb-4 text-accent ">Belanja</h2>
+            <a href="" class="mb-2 cursor-pointer hover:opacity-70">Berbelanja</a>
+            <a href="" class="mb-2 cursor-pointer hover:opacity-70">Pembayaran</a>
+
+          </div>
+
+        </div>
+        <div class="flex flex-col mb-8 md:ml-32 ml-12">
+          <h2 class="mb-4 text-accent ">Lainnya</h2>
+          <a href="" class="mb-2 cursor-pointer hover:opacity-70">Syarat & Ketentuan</a>
+          <a href="" class="mb-2 cursor-pointer hover:opacity-70">Kebijakan & Privasi</a>
+          <a href="" class="mb-2 cursor-pointer hover:opacity-70">Bantuan</a>
+          <a href="" class="mb-2 cursor-pointer hover:opacity-70">Hubungi Kami</a>
+        </div>
+        
+      </div>
+      <img src="assets/images/logo footer.svg" class="object-contain h-28 " alt="footer logo">
+    </div>
+
+    <!-- CONTAINER SOCMED -->
+    <div class="flex w-full items-center gap-2">
+      <hr class="w-full bg-white">
+      <div class="flex gap-2 md:gap-8 ">
+        <a href="#"><img src="assets/icons/instagram.svg" alt="instagram" class="aspect-square h-20 md:h-10 cursor-pointer"></a>
+        <a href="#"><img src="assets/icons/facebook.svg" alt="facebook" class="aspect-square h-20 md:h-10 cursor-pointer"></a>
+        <a href="#"><img src="assets/icons/gmail.svg" alt="gmail" class="aspect-square h-20 md:h-10 cursor-pointer"></a>
+      </div>
+    </div>
+    <!-- CP -->
+    <div class="flex w-full justify-center text-white font-normal pb-4">Copyright 2024</div>
+  </footer>
+</body>
+</html>
