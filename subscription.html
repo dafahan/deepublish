@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Penerbit Buku Deepublish, Penerbit Buku Pendidikan ">
+  <meta name="keywords" content="Buku , Bookstore , Penerbit">
+  <meta name="author" content="dafahan | Gerha Digital">
+  <!-- TAILWIND -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CUSTOM STYLING -->
+  <style>
+    .font-kadwa {
+        font-family: "Kadwa", serif;
+        }
+      .slider::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+
+      }
+  </style>
+
+</head>
+<body class="bg-white flex w-full flex-col font-kadwa ">
+ 
+ 
+  <nav class="shadow-md flex w-full justify-between px-12">
+    <img src="assets/images/logo navbar.png" alt="nav logo" class="object-contain h-20">
+    <div class="flex gap-8 items-center">
+        <img src="./assets/icons/cart.svg" class="object-contain h-8" alt="">
+        <img src="./assets/icons/qw.png" class="object-contain h-8" alt="">
+        <div class="flex h-[80%] w-1 bg-gray-200"></div>
+        <div class="flex gap-2">
+          <a href="login.html" class="rounded-md border-2 border-accent items-center justify-center text-center  py-2 text-accent w-20">Sign In</a>
+          <a href="register.html" class="rounded-md border-2 border-accent bg-accent items-center justify-center text-center  py-2 text-white w-20">Sign Up</a>
+
+        </div>
+        <img src="./assets/icons/profil.svg" class="object-contain h-full hidden" alt="">
+
+
+    </div>
+  </nav>
+
+
+
+  <main class="flex  w-full border-black">
+    <!-- MAIN CONTAINER -->
+        <div class="flex w-full flex-col py-12 gap-8">
+            <!-- PAGINATION -->
+            <div class="flex h-10 items-center justify-start px-12 py-4 text-gray-400"><a href="index.html" class="text-blue-500">Home</a> &nbsp;/ Berlangganan Premium</div>
+            <div class="flex flex-col self-center gap-4">
+                <h1 class="text-accent font-bold text-4xl self-center">Paket yang terjangkau untuk situasi apa pun.</h1>
+                <h2 class="text-black font-normal text-md self-center">Pilih paket Premium dan baca buku tanpa batas di ponsel, laptop, komputer, dan<br> perangkat lainnya. Bayar dengan berbagai cara. Kamu bisa batalkan kapan saja.</h2>
+                <img src="./assets/images/partner.svg" class="object-contain" alt="">
+            </div>
+
+            <!-- NOT EMPTY -->
+            <div class="flex px-12 gap-12 items-center w-full items-center mt-8 px-12 flex-col">
+                <h1 class="text-accent font-bold text-4xl self-center">Pilih paket sesuai kebutuhan kamu, yuk!</h1>
+                <div class="grid grid-cols-2 gap-12 w-full">
+                  <!-- CARD -->
+                  <div class="flex w-full border-2 relative flex-col bg-[#FED980] rounded-b-lg">
+                      <div class="flex px-4 py-2 text-[#EC7C0B] bg-black font-bold w-fit">FULL Premium 1 Bln</div>
+                      <div class="flex flex-col text-black items-start justify-center p-8 gap-2">
+                        <h1 class="text-xl font-bold">Lorem Ipsum dolor sit amet consectur elit</h1>
+                        <h1 class="text-3xl font-bold">Rp74.000,-</h1>
+                      </div>
+                      <div class="flex flex-col text-black items-start gap-4 justify-center p-8 gap-2 bg-gradient-to-b from-[#FFA51F] to-[#009299] to-[92%] rounded-b-lg">
+                        <ul class="list-disc px-12">
+                          <li>Lorem ipsum dolor</li>
+                          <li>sit amet consectetur</li>
+                          <li>sit amet consectetur</li>
+                          <li>sit amet consectetur</li>
+                          <li>sit amet consectetur</li>
+                        </ul>
+                      <button class="bg-black p-2 rounded-lg text-white w-fit self-center">Dapatkan Sekarang</button>
+
+                      </div>
+                  </div>
+
+                   <!-- CARD -->
+                <div class="flex w-full border-2 relative flex-col bg-[#E98862] rounded-b-lg">
+                  <div class="flex px-4 py-2 text-[#EC7C0B] bg-black font-bold w-fit">FULL Premium 1 Bln</div>
+                  <div class="flex flex-col text-black items-start justify-center p-8 gap-2">
+                    <h1 class="text-xl font-bold">Lorem Ipsum dolor sit amet consectur elit</h1>
+                    <h1 class="text-3xl font-bold">Rp74.000,-</h1>
+                  </div>
+                  <div class="flex flex-col text-black items-start gap-4 justify-center p-8 gap-2 bg-gradient-to-b from-[18%] from-[#FFA51F] to-[#DA4A3E] to-[92%] rounded-b-lg">
+                    <ul class="list-disc px-12">
+                      <li>Lorem ipsum dolor</li>
+                      <li>sit amet consectetur</li>
+                      <li>sit amet consectetur</li>
+                      <li>sit amet consectetur</li>
+                      <li>sit amet consectetur</li>
+                    </ul>
+                  <button class="bg-black p-2 rounded-lg text-white w-fit self-center">Dapatkan Sekarang</button>
+
+                  </div>
+              </div>
+
+                  <!-- CARD -->
+                  <div class="flex w-full border-2 relative flex-col bg-[#CCCCCC] rounded-b-lg">
+                      <div class="flex px-4 py-2 text-[#EC7C0B] bg-black font-bold w-fit">FULL Premium 1 Bln</div>
+                      <div class="flex flex-col text-black items-start justify-center p-8 gap-2">
+                        <h1 class="text-xl font-bold">Lorem Ipsum dolor sit amet consectur elit</h1>
+                        <h1 class="text-3xl font-bold">Rp74.000,-</h1>
+                      </div>
+                      <div class="flex flex-col text-black items-start gap-4 justify-center p-8 gap-2 bg-gradient-to-r from-[18%] from-[#00EFFC] to-[#9747FF] to-[85%] rounded-b-lg">
+                        <ul class="list-disc px-12">
+                          <li>Lorem ipsum dolor</li>
+                          <li>sit amet consectetur</li>
+                          <li>sit amet consectetur</li>
+                          <li>sit amet consectetur</li>
+                          <li>sit amet consectetur</li>
+                        </ul>
+                      <button class="bg-black p-2 rounded-lg text-white w-fit self-center">Dapatkan Sekarang</button>
+
+                      </div>
+                  </div>
+
+                  <!-- CARD -->
+                  <div class="flex w-full border-2 relative flex-col bg-[#75B557] rounded-b-lg">
+                    <div class="flex px-4 py-2 text-[#EC7C0B] bg-black font-bold w-fit">FULL Premium 1 Bln</div>
+                    <div class="flex flex-col text-black items-start justify-center p-8 gap-2">
+                      <h1 class="text-xl font-bold">Lorem Ipsum dolor sit amet consectur elit</h1>
+                      <h1 class="text-3xl font-bold">Rp74.000,-</h1>
+                    </div>
+                    <div class="flex flex-col text-black items-start gap-4 justify-center p-8 gap-2 bg-gradient-to-t from-[16%] from-[#FFA51F] to-[#11FF82] to-[92%] rounded-b-lg">
+                      <ul class="list-disc px-12">
+                        <li>Lorem ipsum dolor</li>
+                        <li>sit amet consectetur</li>
+                        <li>sit amet consectetur</li>
+                        <li>sit amet consectetur</li>
+                        <li>sit amet consectetur</li>
+                      </ul>
+                    <button class="bg-black p-2 rounded-lg text-white w-fit self-center">Dapatkan Sekarang</button>
+
+                    </div>
+                </div>
+
+
+
+                </div>
+
+                
+
+               
+            </div>
+
+        </div>
+
+   
+  </main>
+
+
+
+
+  <footer class="flex w-full bg-[#171616] px-24 flex-col">  
+    <!-- CONTAINER NAV -->
+    <div class="flex w-full justify-center md:justify-between flex-wrap py-12">
+      
+      <div class="flex text-xl font-bold text-white justify-between">
+        <div class="flex flex-col">
+          <div class="flex flex-col mb-8">
+            <h2 href="" class="mb-4 text-accent ">Tentang</h2>
+            <a href="" class="mb-2 cursor-pointer hover:opacity-70">Tentang Kami</a>
+            <a href="" class="mb-2 cursor-pointer hover:opacity-70">Toko Kami</a>
+
+          </div>
+          
+          <div class="flex flex-col mb-8">
+            <h2 href="" class="mb-4 text-accent ">Belanja</h2>
+            <a href="" class="mb-2 cursor-pointer hover:opacity-70">Berbelanja</a>
+            <a href="" class="mb-2 cursor-pointer hover:opacity-70">Pembayaran</a>
+
+          </div>
+
+        </div>
+        <div class="flex flex-col mb-8 md:ml-32 ml-12">
+          <h2 class="mb-4 text-accent ">Lainnya</h2>
+          <a href="" class="mb-2 cursor-pointer hover:opacity-70">Syarat & Ketentuan</a>
+          <a href="" class="mb-2 cursor-pointer hover:opacity-70">Kebijakan & Privasi</a>
+          <a href="" class="mb-2 cursor-pointer hover:opacity-70">Bantuan</a>
+          <a href="" class="mb-2 cursor-pointer hover:opacity-70">Hubungi Kami</a>
+        </div>
+        
+      </div>
+      <img src="assets/images/logo footer.svg" class="object-contain h-28 " alt="footer logo">
+    </div>
+
+    <!-- CONTAINER SOCMED -->
+    <div class="flex w-full items-center gap-2">
+      <hr class="w-full bg-white">
+      <div class="flex gap-2 md:gap-8 ">
+        <a href="#"><img src="assets/icons/instagram.svg" alt="instagram" class="aspect-square h-20 md:h-10 cursor-pointer"></a>
+        <a href="#"><img src="assets/icons/facebook.svg" alt="facebook" class="aspect-square h-20 md:h-10 cursor-pointer"></a>
+        <a href="#"><img src="assets/icons/gmail.svg" alt="gmail" class="aspect-square h-20 md:h-10 cursor-pointer"></a>
+      </div>
+    </div>
+    <!-- CP -->
+    <div class="flex w-full justify-center text-white font-normal pb-4">Copyright 2024</div>
+  </footer> 
+</body>
+</html>
