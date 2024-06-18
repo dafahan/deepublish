@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Penerbit Buku Deepublish, Penerbit Buku Pendidikan ">
+  <meta name="keywords" content="Buku , Bookstore , Penerbit">
+  <meta name="author" content="dafahan | Gerha Digital">
+  <!-- TAILWIND -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CUSTOM STYLING -->
+  <style>
+    .font-kadwa {
+        font-family: "Kadwa", serif;
+        }
+      .slider::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+
+      }
+   
+      .checkbox-label {
+        width: 50px;
+        height: 26px;
+        border-radius: 50px;
+        position: relative;
+        padding: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+        .fa-moon {color: white;}
+
+        .fa-sun {color: white;}
+        .checkbox-label .ball {
+            background-color: #fff;
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            border-radius: 50%;
+            transition: transform 0.2s linear;
+            }
+
+            .checkbox:checked + .checkbox-label .ball {
+            transform: translateX(24px);
+            }
+  </style>
+
+</head>
+<body class="bg-white flex w-full flex-col font-kadwa h-screen">
+ 
+ 
+    <nav class="shadow-md flex w-full justify-center dark:bg-[#222831] dark:border-b-2 border-black">
+        <img src="assets/images/logoHitam.svg" id="navLogo" alt="nav logo" class="object-contain h-20 py-4">
+      </nav>
+
+      <main class="flex  w-full border-black dark:bg-[#222831] h-full">
+        <div class="flex w-3/5 h-full  justify-center items-center py-8 relative">
+          <i class="fa-solid fa-chevron-left bg-[#E3E3E3] rounded-full px-3 cursor-pointer dark:bg-black dark:text-[#00F3FF] py-2 absolute left-8 top-1/2 transform -translate-y-1/2"></i>
+            <div class="flex h-full w-96  bg-[url('/assets/images/bookCoverDummy.svg')] bg-cover bg-center"></div>
+            <i class="fa-solid fa-chevron-right bg-[#E3E3E3] rounded-full px-3 cursor-pointer dark:bg-black dark:text-[#00F3FF] py-2 absolute right-8 top-1/2 transform -translate-y-1/2"></i>
+        </div>
+        <div class="flex flex-col w-2/5 h-full p-4 relative px-24 gap-1">
+          <div class="flex h-10">
+            <div class="absolute top-4 left-24">
+              <input type="checkbox" class="checkbox opacity-0 absolute" id="checkbox">
+              <label for="checkbox" class="checkbox-label bg-gradient-to-b dark:from-[10%] dark:from-[#000] dark:to-[70%] dark:to-[#1F324E] from-[22%] from-[#FED980] to-[75%] to-[#FFA51F] ">
+                <i class="fas fa-moon opacity-70"></i>
+                <img src="/assets/icons/sunIcon.svg" class="opacity-70   fa-sun"></img>
+                <span class="ball"></span>
+              </label>
+            </div>
+            <div class="absolute top-4 left-40 text-2xl">
+              <input type="checkbox" class="checkbox  absolute peer hidden" id="bookmark">
+              <label for="bookmark" class="peer-checked:[&>*:nth-child(2)]:visible peer-checked:[&>*:nth-child(1)]:invisible text-[#EC7C0B] dark:text-[#0098BA]">
+                <i class="fa-regular fa-bookmark absolute"></i>
+                <i class="fa-solid fa-bookmark invisible absolute"></i>
+              </label>
+            </div>
+          </div>
+          <div class="flex w-full border-2 flex-col gap-2 dark:bg-[#76ABAE] shadow-xl py-2">
+            <h1 class="text-[#EC7C0B] text-center text-2xl dark:text-[#222831] font-bold">Daftar Halaman</h1>
+            <div class="flex flex-col w-full gap-2 text-sm font-normal">
+              <h1 class="flex w-full justify-between px-2">Cover <span>2</span></h1>
+              <h1 class="flex w-full justify-between px-2">Copyright <span>3</span></h1>
+              <h1 class="flex w-full justify-between px-2">Kata Pengantar <span>4</span></h1>
+              <h1 class="flex w-full justify-between px-2">Daftar Isi <span>5</span></h1>
+              <h1 class="flex w-full justify-between px-2">BAB I Pendahuluan <span>6</span></h1>
+              <h1 class="flex w-full justify-between px-2">BAB II <span>18</span></h1>
+              <h1 class="flex w-full justify-between px-2">BAB III <span>44</span></h1>
+              <h1 class="flex w-full justify-between px-2">BAB IV <span>65</span></h1>
+              <h1 class="flex w-full justify-between px-2">BAB V <span>83</span></h1>
+              <h1 class="flex w-full justify-between px-2">BAB VI <span>120</span></h1>
+              <h1 class="flex w-full justify-between px-2">BAB VII <span>144</span></h1>
+              <h1 class="flex w-full justify-between px-2">BAB VIII <span>162</span></h1>
+              <h1 class="flex w-full justify-between px-2">BAB IX <span>190</span></h1>
+              <h1 class="flex w-full justify-between px-2">BAB X Penutup <span>204</span></h1>
+              <h1 class="flex w-full justify-between px-2">Daftar Pustaka <span>206</span></h1>
+            </div>
+          </div>
+          <div class="flex w-full h-12 justify-center items-center">
+            <div class="grid grid-cols-3 h-full  w-fit p-2 items-center place-content-center gap-2 dark:bg-[#009BBC] bg-[#FED980] rounded-sm">
+              <div class="flex h-8 aspect-square bg-white items-center justify-center">2</div>
+              <div class="flex h-8 aspect-square items-center justify-center">of</div>
+              <div class="flex h-8 aspect-square items-center justify-center ">345</div>
+            </div>
+          </div>
+        </div>
+
+       
+      </main>
+  
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const checkbox = document.getElementById('checkbox');
+    const body = document.body;
+    const navImg = document.getElementById('navLogo');
+    // Check the initial color theme preference
+    const storedTheme = localStorage.getItem('color-theme');
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (storedTheme === 'dark' || (!storedTheme && prefersDarkMode)) {
+        enableDarkMode();
+        checkbox.checked = true; // Update the checkbox state
+    }
+
+    // Toggle dark mode on checkbox change
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            enableDarkMode();
+            localStorage.setItem('color-theme', 'dark');
+        } else {
+            disableDarkMode();
+            localStorage.setItem('color-theme', 'light');
+        }
+    });
+
+    function enableDarkMode() {
+        body.classList.add('dark');
+        navImg.src = 'assets/images/logoPutih.svg'
+    }
+
+    function disableDarkMode() {
+        body.classList.remove('dark');
+        navImg.src = 'assets/images/logoHitam.svg'
+    }
+    
+});
+
+</script>
+
+
+
+  
+</body>
+</html>
