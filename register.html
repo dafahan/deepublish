@@ -47,14 +47,14 @@
             <i class="fa-solid fa-chevron-left text-4xl"></i>
         </a>
         <div class="flex w-full xl:w-1/3 flex-col items-center xl:px-8 ">
-            <h1 class="text-accent font-bold text-6xl">Daftar Akun</h1>
+            <h1 class="text-accent font-bold text-3xl md:text-6xl">Daftar Akun</h1>
 
         <form class="w-full mt-24 group" novalidate>
          <div class="mb-8">
                 <label class="block text-black text-xl font-bold mb-2" for="name">
                   Nama
                 </label>
-                <input class="text-xl shadow appearance-none border focus:bg-white fo bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 focus:shadow-outline" id="name" type="text" name="name" placeholder="Masukkan Nama Anda" required>
+                <input class="text-md md:text-md md:text-xl shadow appearance-none border focus:bg-white fo bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 focus:shadow-outline" id="name" type="text" name="name" placeholder="Masukkan Nama Anda" required>
                 <!-- ERROR MSG -->
             <span class="mt-4 px-2 block text-sm text-red-500 ">
                 Masukan nomor telepon yang valid 
@@ -64,7 +64,7 @@
             <label class="block text-black text-xl font-bold mb-2" for="email">
               Email
             </label>
-            <input class="text-xl shadow appearance-none border focus:bg-white fo bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:outline-4 focus:invalid:bg-white  focus:invalid:ring-red-500 focus:shadow-outline" id="email" type="email" name="email" placeholder="Masukkan Email Anda" required>        
+            <input class="text-md md:text-xl shadow appearance-none border focus:bg-white fo bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:outline-4 focus:invalid:bg-white  focus:invalid:ring-red-500 focus:shadow-outline" id="email" type="email" name="email" placeholder="Masukkan Email Anda" required>        
             <!-- ERROR MSG -->
             <span class="mt-4 px-2 hidden text-sm text-red-500 ">
                 Masukan nomor telepon yang valid 
@@ -74,7 +74,7 @@
             <label class="block text-black text-xl font-bold mb-2" for="telp">
               No. Telepon
             </label>
-            <input class="text-xl shadow appearance-none border focus:bg-white fo bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:outline-4 focus:invalid:bg-white  focus:invalid:ring-red-500 focus:shadow-outline peer peer-[&:not(:placeholder-shown):not(:focus):invalid]:border-red-500" id="telp" type="telp" name="telp" pattern="^(?:\+62|62|0)(?:\d{9,15})$"  placeholder="Masukkan Nomor Telepon Anda" required>
+            <input class="text-md md:text-xl shadow appearance-none border focus:bg-white fo bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:outline-4 focus:invalid:bg-white  focus:invalid:ring-red-500 focus:shadow-outline peer peer-[&:not(:placeholder-shown):not(:focus):invalid]:border-red-500" id="telp" type="telp" name="telp" pattern="^(?:\+62|62|0)(?:\d{9,15})$"  placeholder="Masukkan Nomor Telepon Anda" required>
             <!-- ERROR MSG -->
             <span class="mt-4 px-2 hidden text-sm text-red-500 ">
                 Masukan nomor telepon yang valid 
@@ -84,7 +84,7 @@
                 <label class="block text-black text-xl font-bold mb-2" for="telp">
                   Password
                 </label>
-                <input class="text-xl shadow appearance-none border focus:bg-white fo bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:outline-4 focus:invalid:bg-white  focus:invalid:ring-red-500 focus:shadow-outline peer peer-[&:not(:placeholder-shown):not(:focus):invalid]:border-red-500" id="password" type="password" name="password"  placeholder="Masukkan Password Anda" required>
+                <input class="text-md md:text-xl shadow appearance-none border focus:bg-white fo bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:outline-4 focus:invalid:bg-white  focus:invalid:ring-red-500 focus:shadow-outline peer peer-[&:not(:placeholder-shown):not(:focus):invalid]:border-red-500" id="password" type="password" name="password"  placeholder="Masukkan Password Anda" required>
                 <!-- ERROR MSG -->
                 <span class="mt-4 px-2 hidden text-sm text-red-500 ">
                     Masukan nomor telepon yang valid 
@@ -94,7 +94,7 @@
             <label class="block text-black text-2xl font-bold mb-2" for="password">
               Ketik Ulang Password
             </label>
-            <input class="text-xl shadow appearance-none border focus:bg-white bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 focus:shadow-outline" id="cpassword" type="password" name="cpassword" placeholder="Masukkan Kembali Password Anda" required>
+            <input class="text-md md:text-xl shadow appearance-none border focus:bg-white bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 focus:shadow-outline" id="cpassword" type="password" name="cpassword" placeholder="Masukkan Kembali Password Anda" required>
              <!-- ERROR MSG -->
              <span class="mt-4 px-2 hidden text-sm text-red-500 ">
                 Password tidak sama 
@@ -106,7 +106,7 @@
           <label class="block text-black text-2xl font-bold mb-2" for="password">
             Pilih minat bacaan kamu yuk!
           </label>
-          <div onclick="toggleModal('minat')" class="text-xl shadow appearance-none border bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-400 leading-tight flex items-center justify-start">kamu bisa memilih maks. 5 kategori</div>
+          <div onclick="toggleModal('minat')" class="text-md md:text-xl shadow appearance-none border bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-400 leading-tight flex items-center justify-start">kamu bisa memilih maks. 5 kategori</div>
         <input type="hidden" name="minat" id="inputminat" required/>
          
            <span class="mt-2 px-2 hidden flex-col justify-start text-2xl font-bold text-accent" id="containerList">
@@ -127,7 +127,7 @@
         <label class="block text-black text-xl font-bold mb-2" for="referal">
           Tahu Deepublish dari teman?
         </label>
-        <input class="text-xl shadow appearance-none border focus:bg-white fo bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:outline-4 focus:invalid:bg-white  focus:invalid:ring-red-500 focus:shadow-outline peer peer-[&:not(:placeholder-shown):not(:focus):invalid]:border-red-500" id="referal" type="text" name="referal"  placeholder="Masukkan kode referal teman mu disini..." required>
+        <input class="text-sm md:text-xl shadow appearance-none border focus:bg-white fo bg-secondary rounded-lg w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-2 focus:invalid:outline-4 focus:invalid:bg-white  focus:invalid:ring-red-500 focus:shadow-outline peer peer-[&:not(:placeholder-shown):not(:focus):invalid]:border-red-500" id="referal" type="text" name="referal"  placeholder="Masukkan kode referal teman mu disini..." required>
         <!-- ERROR MSG -->
         <span class="mt-4 px-2 hidden text-sm text-red-500 ">
             Masukan nomor telepon yang valid 

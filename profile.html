@@ -31,15 +31,15 @@
 <body class="bg-white flex w-full flex-col font-kadwa ">
  
  
-  <nav class="shadow-md flex w-full justify-between px-12">
-    <img src="assets/images/logo navbar.png" alt="nav logo" class="object-contain h-20">
+  <nav class="shadow-md flex w-full justify-between sm:px-12 px-4">
+    <img src="assets/images/logo navbar.png" alt="nav logo" class="object-contain h-12  md:h-20">
     <div class="flex gap-8 items-center">
-        <img src="./assets/icons/cart.svg" class="object-contain h-8" alt="">
-        <img src="./assets/icons/qw.png" class="object-contain h-8" alt="">
-        <div class="flex h-[80%] w-1 bg-gray-200"></div>
+        <img src="./assets/icons/cart.svg" class="hidden sm:flex object-contain h-8" alt="">
+        <img src="./assets/icons/qw.png" class="hidden sm:flex object-contain h-8" alt="">
+        <div class="flex h-[80%] w-1 bg-gray-200 hidden sm:flex"></div>
         <div class="flex gap-2">
-          <a href="login.html" class="rounded-md border-2 border-accent items-center justify-center text-center  py-2 text-accent w-20">Sign In</a>
-          <a href="register.html" class="rounded-md border-2 border-accent bg-accent items-center justify-center text-center  py-2 text-white w-20">Sign Up</a>
+          <a href="login.html" class="rounded-md border-2 border-accent items-center justify-center text-center  sm:py-2 text-accent w-20">Sign In</a>
+          <a href="register.html" class="rounded-md border-2 border-accent bg-accent items-center justify-center text-center  sm:py-2 text-white w-20">Sign Up</a>
 
         </div>
         <img src="./assets/icons/profil.svg" class="object-contain h-full hidden" alt="">
@@ -57,7 +57,7 @@
             <div class="flex h-10 items-center justify-start px-12 py-4 text-gray-400"><a href="index.html" class="text-blue-500">Home</a> &nbsp;/ Berlangganan Premium</div>
            
 
-            <div class="flex px-12 gap-12 items-center w-full items-center mt-2 relative">
+            <div class="flex px-12 gap-12 w-full items-start mt-2 relative">
                <div class="flex w-fit bg-[#9C3616] rounded-lg flex-col px-8 gap-4 py-4 ">
                  <div class="flex px-6 gap-4">
                   <img src="./assets/icons/facebook.svg" class="object-cover rounded-full w-16 h-16" alt="">
@@ -103,6 +103,53 @@
                 </div>
 
                </div>
+            <div class="flex w-full  flex-col items-start">
+              <h1 class="text-accent text-bold text-2xl">Biodata Akun</h1>
+              <div class="flex w-full flex-col gap-8 shadow-2xl rounded-lg p-8">
+                <label for="file" class="self-center">
+                <img src="./assets/images/bookCoverDummy.svg" class="object-cover h-40 w-40 rounded-lg " alt="">
+                </label>
+                <input type="file" id="file" class="hidden">
+                <div class="flex gap-4 w-full">
+                  <label for="name" class="text-accent text-xl text-bold w-2/6">Nama</label>
+                  <input type="text" name="nama" id="nama" class="flex w-4/6 border-2  border-gray-500 rounded-lg text-center items-center justify-center">
+                </div>
+                <div class="flex gap-4 w-full">
+                  <label for="birthdate" class="text-accent text-xl text-bold w-2/6">Tanggal Lahir</label>
+                  <input type="date" name="birthdate" id="birthdate" class="flex w-4/6 border-2  border-gray-500 rounded-lg text-center items-center justify-center">
+                </div>
+                <div class="flex gap-4 w-full">
+                  <label for="jk" class="text-accent text-xl text-bold w-2/6">Jenis Kelamin</label>
+                  <select name="jk" id="jk" class="flex w-4/6 border-2  border-gray-500 rounded-lg text-center items-center justify-center">
+                      <option>Perempuan</option>
+                      <option>Laki Laki</option>
+                  </select>
+                </div>
+
+                <div class="flex gap-4 w-full">
+                  <label for="job" class="text-accent text-xl text-bold w-2/6">Pekerjaan</label>
+                  <input type="text" name="job" id="job" class="flex w-4/6 border-2  border-gray-500 rounded-lg text-center items-center justify-center">
+                </div>
+
+                <div class="flex gap-4 w-full">
+                  <label for="name" class="text-accent text-xl text-bold w-2/6">Alamat</label>
+                  <textarea  name="nama" id="nama" class="flex w-4/6 text-xs border-2  border-gray-500 rounded-lg text-center items-center justify-center" rows="4"></textarea>
+                </div>
+
+                <div class="flex gap-4 w-full">
+                  <label for="email" class="text-accent text-xl text-bold w-2/6">Pekerjaan</label>
+                  <input type="email" name="email" id="email" class="flex w-4/6 border-2  border-gray-500 rounded-lg text-center items-center justify-center">
+                </div>
+
+                <div class="flex gap-4 w-full">
+                  <label for="password" class="text-accent text-xl text-bold w-2/6">Password</label>
+                  <input type="password" name="password" id="password" class="flex w-4/6 border-2  border-gray-500 rounded-lg text-center items-center justify-center">
+                </div>
+                
+                <button class="bg-accent px-4 py-2 text-white self-end rounded-lg">Simpan</button>
+
+              </div>
+            </div>
                
             </div>
 

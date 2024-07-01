@@ -9,6 +9,7 @@
   <!-- TAILWIND -->
   <link href="assets/css/main.css" rel="stylesheet">
   <!-- FONTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap" rel="stylesheet">
@@ -64,14 +65,37 @@
         <img src="assets/images/logoHitam.svg" id="navLogo" alt="nav logo" class="object-contain h-20 py-4">
       </nav>
 
-      <main class="flex  w-full border-black dark:bg-[#222831] h-full">
-        <div class="flex w-3/5 h-full  justify-center items-center py-8 relative">
+      <main class="flex  w-full border-black dark:bg-[#222831] h-full relative flex-col md:flex-row">
+        <a href="javascript:void(0)" onclick="window.history.back()" class="text-[#1F324E] md:hidden absolute top-0 left-0 hover:opacity-70 m-4 text-[#EC7C0B] dark:text-[#0098BA]">
+          <i class="fa-solid fa-chevron-left text-2xl"></i>
+      </a>
+
+
+      <div class="absolute top-4 right-20 md:hidden">
+        <input type="checkbox" class="checkbox opacity-0 absolute" id="checkbox">
+        <label for="checkbox" class="checkbox-label bg-gradient-to-b dark:from-[10%] dark:from-[#000] dark:to-[70%] dark:to-[#1F324E] from-[22%] from-[#FED980] to-[75%] to-[#FFA51F] ">
+          <i class="fas fa-moon opacity-70"></i>
+          <img src="/assets/icons/sunIcon.svg" class="opacity-70   fa-sun"></img>
+          <span class="ball"></span>
+        </label>
+      </div>
+      <div class="absolute top-0 right-12 text-2xl md:hidden m-4">
+        <input type="checkbox" class="checkbox  absolute peer hidden" id="bookmark">
+        <label for="bookmark" class="peer-checked:[&>*:nth-child(2)]:visible peer-checked:[&>*:nth-child(1)]:invisible text-[#EC7C0B] dark:text-[#0098BA]">
+          <i class="fa-regular fa-bookmark absolute"></i>
+          <i class="fa-solid fa-bookmark invisible absolute"></i>
+        </label>
+      </div>
+      <a href="javascript:void(0)" onclick="showIsi()" class="text-[#1F324E] md:hidden absolute top-0 right-0 text-xl hover:opacity-70 m-4 text-[#EC7C0B] dark:text-[#0098BA]">
+        <i class="fa-solid fa-bars"></i>
+    </a>
+        <div class="flex w-full mt-12 md:mt-0 md:w-3/5 h-full  justify-center items-center py-8 relative " id="preview">
           <i class="fa-solid fa-chevron-left bg-[#E3E3E3] rounded-full px-3 cursor-pointer dark:bg-black dark:text-[#00F3FF] py-2 absolute left-8 top-1/2 transform -translate-y-1/2"></i>
             <div class="flex h-full w-96  bg-[url('/assets/images/bookCoverDummy.svg')] bg-cover bg-center"></div>
             <i class="fa-solid fa-chevron-right bg-[#E3E3E3] rounded-full px-3 cursor-pointer dark:bg-black dark:text-[#00F3FF] py-2 absolute right-8 top-1/2 transform -translate-y-1/2"></i>
         </div>
-        <div class="flex flex-col w-2/5 h-full p-4 relative px-24 gap-1">
-          <div class="flex h-10">
+        <div class="flex flex-col w-full md:w-2/5 h-fit mb-12 md:mb-0 md:h-full p-4 relative px-4 mt-12 md:mt-0 md:px-24 gap-1 mb-12 ">
+          <div class="md:flex h-10 hidden">
             <div class="absolute top-4 left-24">
               <input type="checkbox" class="checkbox opacity-0 absolute" id="checkbox">
               <label for="checkbox" class="checkbox-label bg-gradient-to-b dark:from-[10%] dark:from-[#000] dark:to-[70%] dark:to-[#1F324E] from-[22%] from-[#FED980] to-[75%] to-[#FFA51F] ">
@@ -88,7 +112,7 @@
               </label>
             </div>
           </div>
-          <div class="flex w-full border-2 flex-col gap-2 dark:bg-[#76ABAE] shadow-xl py-2">
+          <div class="md:flex w-full border-2 flex-col gap-2 dark:bg-[#76ABAE] shadow-xl py-2 hidden" id="daftarisi">
             <h1 class="text-[#EC7C0B] text-center text-2xl dark:text-[#222831] font-bold">Daftar Halaman</h1>
             <div class="flex flex-col w-full gap-2 text-sm font-normal">
               <h1 class="flex w-full justify-between px-2">Cover <span>2</span></h1>
@@ -108,7 +132,7 @@
               <h1 class="flex w-full justify-between px-2">Daftar Pustaka <span>206</span></h1>
             </div>
           </div>
-          <div class="flex w-full h-12 justify-center items-center">
+          <div class="flex w-full h-12 justify-center items-center static max-sm:fixed max-sm:bottom-12 max-sm:left-1/2 max-sm:transform max-sm:-translate-x-1/2">
             <div class="grid grid-cols-3 h-full  w-fit p-2 items-center place-content-center gap-2 dark:bg-[#009BBC] bg-[#FED980] rounded-sm">
               <div class="flex h-8 aspect-square bg-white items-center justify-center">2</div>
               <div class="flex h-8 aspect-square items-center justify-center">of</div>
@@ -121,6 +145,16 @@
       </main>
   
 <script>
+function showIsi(){
+    if ($('#preview').css('display') === 'none') {
+        $('#preview').css('display', 'block');
+        $('#daftarisi').css('display', 'none');
+    } else {
+        $('#preview').css('display', 'none');
+        $('#daftarisi').css('display', 'block');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const checkbox = document.getElementById('checkbox');
     const body = document.body;

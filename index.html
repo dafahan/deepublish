@@ -25,15 +25,15 @@
 <body class="bg-white flex w-full flex-col font-kadwa ">
  
  
-  <nav class="shadow-md flex w-full justify-between px-12">
-    <img src="assets/images/logo navbar.png" alt="nav logo" class="object-contain h-20">
+  <nav class="shadow-md flex w-full justify-between sm:px-12 px-4">
+    <img src="assets/images/logo navbar.png" alt="nav logo" class="object-contain h-12  md:h-20">
     <div class="flex gap-8 items-center">
-        <img src="./assets/icons/cart.svg" class="object-contain h-8" alt="">
-        <img src="./assets/icons/qw.png" class="object-contain h-8" alt="">
-        <div class="flex h-[80%] w-1 bg-gray-200"></div>
+        <img src="./assets/icons/cart.svg" class="hidden sm:flex object-contain h-8" alt="">
+        <img src="./assets/icons/qw.png" class="hidden sm:flex object-contain h-8" alt="">
+        <div class="flex h-[80%] w-1 bg-gray-200 hidden sm:flex"></div>
         <div class="flex gap-2">
-          <a href="login.html" class="rounded-md border-2 border-accent items-center justify-center text-center  py-2 text-accent w-20">Sign In</a>
-          <a href="register.html" class="rounded-md border-2 border-accent bg-accent items-center justify-center text-center  py-2 text-white w-20">Sign Up</a>
+          <a href="login.html" class="rounded-md border-2 border-accent items-center justify-center text-center  sm:py-2 text-accent w-20">Sign In</a>
+          <a href="register.html" class="rounded-md border-2 border-accent bg-accent items-center justify-center text-center  sm:py-2 text-white w-20">Sign Up</a>
 
         </div>
         <img src="./assets/icons/profil.svg" class="object-contain h-full hidden" alt="">
@@ -50,11 +50,11 @@
         <!-- BANNER -->
         <div class="flex  w-full bg-center bg-no-repeat bg-cover items-center justify-center flex-col py-16 gap-8 px-12 md:px-24" style="background-image: url('assets/images/bookstore.svg');">
           <img src="./assets/images/Deepublish.svg" alt="" class="object-contain h-36">
-          <h1 class="text-center text-white text-2xl font-bold tracking-wide">Toko buku online terlengkap untuk referensi anak kuliah di Indonesia.</h1>
-          <div class="flex bg-white rounded-lg w-full md:w-2/3 h-16 relative">
-            <i class="fa-solid fa-magnifying-glass absolute left-0 m-4 text-2xl"></i>
-            <input type="text" name="filterKeyword" id="filterKeyword" placeholder="Cari Produk, Judul Buku, dan Penulis.." class="flex w-4/5 rounded-s-lg border-r-4 border-accent text-center text-2xl">
-            <select class="w-1/5 text-center flex text-xl items-center justify-center bg-white rounded-e-lg border-r-8 border-transparent" name="filterCategory" id="filterCategory"> 
+          <h1 class="text-center text-white text-xl sm:text-2xl font-bold tracking-wide">Toko buku online terlengkap untuk referensi anak kuliah di Indonesia.</h1>
+          <div class="flex bg-white rounded-lg w-full md:w-2/3 h-12 sm:h-16 relative">
+            <i class="fa-solid fa-magnifying-glass absolute left-0 m-4  sm:text-2xl"></i>
+            <input type="text" name="filterKeyword" id="filterKeyword" placeholder="Cari Produk, Judul Buku, dan Penulis.." class="flex w-4/5 rounded-s-lg border-r-4 border-accent text-center text-[9px] sm:text-2xl">
+            <select class="w-1/5 text-center flex text-[7px] sm:text-xl items-center justify-center bg-white rounded-e-lg border-r-8 border-transparent" name="filterCategory" id="filterCategory"> 
               <option value="">Kategori</option>
             </select>
           </div>
@@ -65,8 +65,8 @@
 
             <div class="flex w-full h-[500px] relative">
               <div class="flex w-full sm:mx-24 my-12 border-2 bg-cover bg-center transition-all duration-500" id="card" style="background-image: url('./assets/images/bookstore.svg');"></div>
-              <i class="fa-solid fa-chevron-right absolute top-[35%] right-6 text-accent bg-white rounded-full shadow-md p-4 text-4xl cursor-pointer" id="nextSlide"></i>
-              <i class="fa-solid fa-chevron-left absolute top-[35%] left-6 text-accent bg-white rounded-full shadow-md p-4 text-4xl cursor-pointer" id="prevSlide"></i>
+              <i class="fa-solid fa-chevron-right absolute top-[35%] right-6 text-accent bg-white rounded-full shadow-md p-4 sm:text-4xl cursor-pointer" id="nextSlide"></i>
+              <i class="fa-solid fa-chevron-left absolute top-[35%] left-6 text-accent bg-white rounded-full shadow-md p-4 tsm:ext-4xl cursor-pointer" id="prevSlide"></i>
               <div class="flex gap-2 absolute bottom-4 left-1/2 transform -translate-x-1/2">
                   <i class="fa-solid fa-circle text-sm text-accent" data-index="0"></i>
                   <i class="fa-solid fa-circle text-sm" data-index="1"></i>
@@ -119,199 +119,79 @@
         </div>
 
           <!-- NEW BOOK SECTION -->
-          <div class="flex w-full px-12 gap-4 flex-col pt-8 pb-16">
+          <div class="flex w-full px-4 md:px-12 gap-4 flex-col pt-8 pb-16">
             <div class="flex items-center w-full h-fit gap-4"><h1 class="text-4xl" style="text-shadow: 2px 2px 4px #009BBC;">Buku Terbaru</h1> <img src="./assets/icons/newLabel.svg" class="h-full" alt=""></div>
-            <div class="grid grid-cols-5 gap-x-8 gap-y-12 ">
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
+            <div class="md:grid md:grid-cols-5 md:gap-x-8 md:gap-y-12  flex overflow-x-auto space-x-4 overflow-y-hidden">
+
+              <div class="flex-shrink-0 w-1/2 md:w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2">
+                <div class="flex h-3/5 px-1 md:px-8 justify-center"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
                 <div class="flex h-1/5 px-4 flex-col">
                   <!-- TITLE -->
                   <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
                   <!-- YEAR -->
                   <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
                   <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
+                  <h1 class="text-center text-sm md:text-xl font-bold">Rp.89.000,-</h1>
                   <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+
+                   
                   </div>
                 </div>
               </div>
 
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
+
+
+              <div class="flex-shrink-0 w-1/2 md:w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2">
+                <div class="flex h-3/5 px-1 md:px-8 justify-center"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
                 <div class="flex h-1/5 px-4 flex-col">
                   <!-- TITLE -->
                   <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
                   <!-- YEAR -->
                   <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
                   <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
+                  <h1 class="text-center text-sm md:text-xl font-bold">Rp.89.000,-</h1>
                   <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+
+                   
                   </div>
                 </div>
               </div>
 
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
+
+
+
+              <div class="flex-shrink-0 w-1/2 md:w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2">
+                <div class="flex h-3/5 px-1 md:px-8 justify-center"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
                 <div class="flex h-1/5 px-4 flex-col">
                   <!-- TITLE -->
                   <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
                   <!-- YEAR -->
                   <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
                   <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
+                  <h1 class="text-center text-sm md:text-xl font-bold">Rp.89.000,-</h1>
                   <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+
+                   
                   </div>
                 </div>
               </div>
 
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2" >
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 pt-2">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
-
+             
 
             </div>
           </div>
@@ -319,207 +199,120 @@
 
 
           <!-- MUST HAVE SECTION -->
-          <div class="flex w-full px-12 gap-4 flex-col pt-8 pb-16 bg-[#FDE1E1]">
+          <div class="flex w-full px-4 md:px-12 gap-4 flex-col pt-8 pb-16 bg-[#FDE1E1]">
             <div class="flex items-center w-full h-fit gap-4"><h1 class="text-4xl" style="text-shadow: 2px 2px 4px #D52D88;">Buku Populer</h1> <img src="./assets/icons/mustHaveLabel.svg" class="h-full" alt=""></div>
-            <div class="grid grid-cols-5 gap-x-8 gap-y-12 ">
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
+            <div class="md:grid md:grid-cols-5 md:gap-x-8 md:gap-y-12  flex overflow-x-auto space-x-4 overflow-y-hidden">
+
+              <div class="flex flex-shrink-0 w-1/2 md:w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
+                                <div class="flex h-3/5 px-1 md:px-8 justify-center"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
+
                 <div class="flex h-1/5 px-4 flex-col">
                   <!-- TITLE -->
                   <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
                   <!-- YEAR -->
                   <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
                   <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
+                  <h1 class="text-center text-sm md:text-xl font-bold">Rp.89.000,-</h1>
                   <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                    <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+
                   </div>
                 </div>
               </div>
 
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
+
+
+              <div class="flex flex-shrink-0 w-1/2 md:w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
+                <div class="flex h-3/5 px-1 md:px-8 justify-center"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
+
+              <div class="flex h-1/5 px-4 flex-col">
+                <!-- TITLE -->
+                <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
+                <!-- YEAR -->
+                <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
+                <!-- HARGA -->
+                <h1 class="text-center text-sm md:text-xl font-bold">Rp.89.000,-</h1>
+                <div class="flex items-center justify-center mt-1">
+                  <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                  <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                  <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                  <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+                  <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+
                 </div>
+              </div>
               </div>
 
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
 
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
 
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
+              <div class="flex flex-shrink-0 w-1/2 md:w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
+                <div class="flex h-3/5 px-1 md:px-8 justify-center"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
 
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
+              <div class="flex h-1/5 px-4 flex-col">
+              <!-- TITLE -->
+              <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
+              <!-- YEAR -->
+              <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
+              <!-- HARGA -->
+              <h1 class="text-center text-sm md:text-xl font-bold">Rp.89.000,-</h1>
+              <div class="flex items-center justify-center mt-1">
+              <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+              <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+              <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+              <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
+              <i class="fa-solid text-xs md:text-md fa-star text-[#FFA51F]"></i>
 
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
               </div>
+              </div>
+</div>
+              
 
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
 
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
+              
 
-              <div class="flex w-full h-80 shadow-xl rounded-lg flex-col gap-2 bg-white pt-2 cursor-pointer">
-                <div class="flex h-3/5 px-8"><img src="./assets/images/bookCoverDummy.svg" alt="" class="object-cover h-full rounded-sm"></div>
-                <div class="flex h-1/5 px-4 flex-col">
-                  <!-- TITLE -->
-                  <h1 class="text-sm font-semibold">Buku Metode Penelitian Kebidanan</h1>
-                  <!-- YEAR -->
-                  <h2 class="text-xs font-thin text-gray-400 font-medium">2017</h2>
-                  <!-- HARGA -->
-                  <h1 class="text-center text-xl font-bold">Rp.89.000,-</h1>
-                  <div class="flex items-center justify-center mt-1">
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                    <i class="fa-solid fa-star text-[#FFA51F]"></i>
-                  </div>
-                </div>
-              </div>
+            
+
+              
+
 
             </div>
           </div>
-
+          
 
 
 
           <!-- KATEGORI SECTION -->
-          <div class="flex w-full px-12 gap-4 flex-col pt-8 pb-16 ">
+
+          <div class="flex md:hidden w-full px-12 gap-4 flex-col pt-8 pb-16 bg-[#FED980]">
+            <div class="flex items-center w-full h-fit gap-4"><h1 class="text-2xl" style="text-shadow: 2px 2px 4px #EC7C0B;">Kategori Buku</h1> </div>
+            <div class="flex justify-center items-center p-2">
+              <div class="grid grid-cols-4 gap-1">
+                <a href="" class="flex w-full py-2 rounded-lg shadow-xl items-center justify-center  px-2 bg-white">
+                  <h1 class="text-xs group-hover:text-accent text-center">Agama Islam</h1>
+                </a>
+                <a href="" class="flex w-full py-2 rounded-lg shadow-xl items-center justify-center  px-2 bg-white">
+                  <h1 class="text-xs group-hover:text-accent text-center">Agama Islam</h1>
+                </a>
+                <a href="" class="flex w-full py-2 rounded-lg shadow-xl items-center justify-center  px-2 bg-white">
+                  <h1 class="text-xs group-hover:text-accent text-center">Agama Islam</h1>
+                </a>
+                <a href="" class="flex w-full py-2 rounded-lg shadow-xl items-center justify-center  px-2 bg-white">
+                  <h1 class="text-xs group-hover:text-accent text-center">Agama Islam</h1>
+                </a>
+                
+
+                
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- DESKTOP -->
+          <div class="hidden md:flex w-full px-12 gap-4 flex-col pt-8 pb-16 ">
             <div class="flex items-center w-full h-fit gap-4"><h1 class="text-4xl" style="text-shadow: 2px 2px 4px #EC7C0B;">Kategori Buku</h1> </div>
             <div class="grid grid-cols-4 gap-x-4 gap-y-4 px-4 ">
                 <a href="" class="flex w-full h-16 rounded-lg shadow-xl items-center justify-start gap-x-2 group">
@@ -703,17 +496,17 @@
           <!-- SECTION 4 -->
           <div class="flex w-full px-12 gap-4 flex-col pt-8 pb-16 bg-white">
             <h1 class="mx-auto text-4xl font-bold">Ingin Akses Buku Lebih Banyak?</h1>
-            <div class="flex mx-auto h-96 md:w-1/2">
-              <div class="flex w-1/2 justify-end">
-                <img src="./assets/icons/banner474.svg" class="object-contain h-full" alt="">
+            <div class="flex mx-auto h-96 md:w-1/2 flex-col md:flex-row gap-4">
+              <div class="flex w-full md:w-1/2 items-center md:justify-end justify-center">
+                <img src="./assets/icons/banner474.svg" class="object-contain h-40 md:h-full" alt="">
               </div>
-              <div class="flex w-1/2 justify-center px-4 items-start flex-col">
+              <div class="flex w-full md:w-1/2 justify-center px-4 items-start flex-col">
                 <p class="text-xs">Kamu bisa nikmati bacaan sebanyak yang kamu mau dan menjelajah dunia pengetahuan tanpa batas dengan berlangganan premium ebook kami.</p>
                 <br>
                 <p class="text-xs">Dapatkan akses eksklusif ke koleksi buku terbaru, fitur baca offline, dan membaca bebas iklan yang akan memperkaya pengalaman membaca Kamu.</p>
                 <br>
                 <br>
-                <a href="" class="place-self-end bg-accent rounded-lg py-2 px-4 m-2 hover:opacity-70">Jelajah Premium</a>
+                <a href="" class="place-self-center md:place-self-end bg-accent rounded-lg py-2 px-4 m-2 hover:opacity-70">Jelajah Premium</a>
               </div>
             </div>
           </div>
