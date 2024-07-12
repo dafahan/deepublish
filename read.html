@@ -15,6 +15,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script>
+
   <!-- CUSTOM STYLING -->
   <style>
     .font-kadwa {
@@ -90,9 +93,12 @@
         <i class="fa-solid fa-bars"></i>
     </a>
         <div class="flex w-full mt-12 md:mt-0 md:w-3/5 h-full  justify-center items-center py-8 relative " id="preview">
-          <i class="fa-solid fa-chevron-left bg-[#E3E3E3] rounded-full px-3 cursor-pointer dark:bg-black dark:text-[#00F3FF] py-2 absolute left-8 top-1/2 transform -translate-y-1/2"></i>
-            <div class="flex h-full w-96  bg-[url('/assets/images/bookCoverDummy.svg')] bg-cover bg-center"></div>
-            <i class="fa-solid fa-chevron-right bg-[#E3E3E3] rounded-full px-3 cursor-pointer dark:bg-black dark:text-[#00F3FF] py-2 absolute right-8 top-1/2 transform -translate-y-1/2"></i>
+          <i class="fa-solid fa-chevron-left bg-[#E3E3E3] rounded-full px-3 cursor-pointer dark:bg-black dark:text-[#00F3FF] py-2 absolute left-8 top-1/2 transform -translate-y-1/2" onclick="previousPage()"></i>
+          <div class="flex w-full mt-12 md:mt-0 md:w-3/5 h-full justify-center items-center py-8 relative" id="preview">
+            <canvas id="pdf-render" class="w-full h-full"></canvas>
+          </div>
+          
+            <i class="fa-solid fa-chevron-right bg-[#E3E3E3] rounded-full px-3 cursor-pointer dark:bg-black dark:text-[#00F3FF] py-2 absolute right-8 top-1/2 transform -translate-y-1/2"  onclick="nextPage()"></i>
         </div>
         <div class="flex flex-col w-full md:w-2/5 h-fit mb-12 md:mb-0 md:h-full p-4 relative px-4 mt-12 md:mt-0 md:px-24 gap-1 mb-12 ">
           <div class="md:flex h-10 hidden">
@@ -133,12 +139,12 @@
             </div>
           </div>
           <div class="flex w-full h-12 justify-center items-center static max-sm:fixed max-sm:bottom-12 max-sm:left-1/2 max-sm:transform max-sm:-translate-x-1/2">
-            <div class="grid grid-cols-3 h-full  w-fit p-2 items-center place-content-center gap-2 dark:bg-[#009BBC] bg-[#FED980] rounded-sm">
-              <div class="flex h-8 aspect-square bg-white items-center justify-center">2</div>
+            <div class="grid grid-cols-3 h-full w-fit p-2 items-center place-content-center gap-2 dark:bg-[#009BBC] bg-[#FED980] rounded-sm">
+              <div class="flex h-8 aspect-square bg-white items-center justify-center" id="page-num">1</div>
               <div class="flex h-8 aspect-square items-center justify-center">of</div>
-              <div class="flex h-8 aspect-square items-center justify-center ">345</div>
+              <div class="flex h-8 aspect-square items-center justify-center" id="page-count"></div>
             </div>
-          </div>
+          </div>          
         </div>
 
        
@@ -190,6 +196,80 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     
 });
+const url = '/assets/books/book.pdf';
+let pdfDoc = null,
+    pageNum = 1,
+    pageIsRendering = false,
+    pageNumIsPending = null;
+
+const scale = 1.5,
+      canvas = document.getElementById('pdf-render'),
+      ctx = canvas.getContext('2d');
+
+// Render the page
+const renderPage = num => {
+  pageIsRendering = true;
+
+  // Get page
+  pdfDoc.getPage(num).then(page => {
+    const viewport = page.getViewport({ scale });
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    const renderCtx = {
+      canvasContext: ctx,
+      viewport
+    };
+
+    page.render(renderCtx).promise.then(() => {
+      pageIsRendering = false;
+
+      if (pageNumIsPending !== null) {
+        renderPage(pageNumIsPending);
+        pageNumIsPending = null;
+      }
+    });
+  });
+
+  // Update page counters
+  document.getElementById('page-num').textContent = num;
+};
+
+// Check for pages rendering
+const queueRenderPage = num => {
+  if (pageIsRendering) {
+    pageNumIsPending = num;
+  } else {
+    renderPage(num);
+  }
+};
+
+// Show Previous Page
+const previousPage = () => {
+  if (pageNum <= 1) {
+    return;
+  }
+  pageNum--;
+  queueRenderPage(pageNum);
+};
+
+// Show Next Page
+const nextPage = () => {
+  if (pageNum >= pdfDoc.numPages) {
+    return;
+  }
+  pageNum++;
+  queueRenderPage(pageNum);
+};
+
+// Get Document
+pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+  pdfDoc = pdfDoc_;
+  document.getElementById('page-count').textContent = pdfDoc.numPages;
+
+  renderPage(pageNum);
+});
+
 
 </script>
 
